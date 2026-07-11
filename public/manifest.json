@@ -1,0 +1,61 @@
+{
+  "name": "SeeUI — Emotion Color Psychology Generator",
+  "short_name": "SeeUI",
+  "description": "Free online emotion-based color psychology generator, WCAG contrast checker, Tailwind palette scale, brand book PDF, image emotion extractor, and pro gradient builder for designers and developers.",
+  "start_url": "/",
+  "scope": "/",
+  "id": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "browser"],
+  "background_color": "#0F172A",
+  "theme_color": "#0F172A",
+  "orientation": "any",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": [
+    "design",
+    "utilities",
+    "productivity",
+    "developer tools",
+    "graphics"
+  ],
+  "keywords": [
+    "color psychology",
+    "palette generator",
+    "WCAG contrast",
+    "Tailwind colors",
+    "brand book",
+    "UI design tool"
+  ],
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "type": "image/png",
+      "sizes": "any",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "SeeUI live color psychology workspace"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

@@ -1,0 +1,222 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# SeeUI — .gitignore
+# Stack: Vite · React Router v7 SPA · Tailwind · Appwrite (optional donations)
+#
+# KEEP in git (product):  src/app/page.jsx, preview/, extract/, gradient/, donate/,
+#                         src/components/, src/data/, src/utils/ (product), src/lib/,
+#                         public/, package.json, configs, README, LICENSE, DEPLOY.md
+# IGNORE: build artifacts, secrets, deps, Create.xyz scaffolding, unused demos
+# ═══════════════════════════════════════════════════════════════════════════════
+
+# ── Dependencies ──────────────────────────────────────────────────────────────
+node_modules/
+.pnp
+.pnp.js
+.yarn/
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+jspm_packages/
+bower_components/
+web_modules/
+
+# ── Build / generated output ──────────────────────────────────────────────────
+build/
+dist/
+out/
+.output/
+.vercel/
+.netlify/
+.wrangler/
+.turbo/
+tmp/
+temp/
+*.tsbuildinfo
+.cache/
+.parcel-cache/
+.webpack/
+.rollup.cache/
+storybook-static/
+
+# ── React Router / Vite generated ─────────────────────────────────────────────
+.react-router/
+.vite/
+vite.config.ts.timestamp-*
+*.local
+
+# ── Environment & secrets (never commit) ──────────────────────────────────────
+.env
+.env.*
+!.env.example
+!.env.sample
+.env.local
+.env.development.local
+.env.test.local
+.env.production
+.env.production.local
+.env.staging
+*.pem
+*.key
+secrets/
+credentials/
+.secrets
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+build-log.txt
+
+# ── Test / coverage caches ────────────────────────────────────────────────────
+coverage/
+.nyc_output/
+*.lcov
+.jest/
+.vitest/
+vitest.config.ts.timestamp-*
+__screenshots__/
+playwright-report/
+test-results/
+.mocha/
+
+# Platform vitest harness only (not product unit tests)
+test/
+src/app/api/vitest.config.ts
+
+# ── TypeScript ────────────────────────────────────────────────────────────────
+*.tsbuildinfo
+next-env.d.ts
+
+# ── Package managers (npm + package-lock.json is tracked) ─────────────────────
+bun.lock
+bun.lockb
+yarn.lock
+pnpm-lock.yaml
+.pnpm-store/
+
+# ── OS junk ───────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# ── Editors / IDEs ────────────────────────────────────────────────────────────
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json.example
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.code-workspace
+
+# ── AI / agent tooling ────────────────────────────────────────────────────────
+.cursor/
+.claude/
+.grok/
+.windsurf/
+.aider*
+.continue/
+.copilot/
+.agents/
+AGENTS.local.md
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# Create.xyz / platform scaffolding — NOT used by SeeUI product runtime
+# (vite.config only loads reactRouter + tsconfigPaths; routes.ts only lists
+#  /, /preview, /extract, /gradient, donate/*)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+# Root Create adapters
+__create/
+
+# Design mode, PolymorphicComponent, stripe/auth platform shims
+src/__create/
+
+# Social-dev shim page
+src/app/__create/
+
+# Platform SSR / social-secret test API
+src/app/api/__create/
+
+# Create Vite plugins (not registered in vite.config.ts)
+plugins/
+
+# Platform demo “error playground” pages (not in routes.ts)
+src/app/errors/
+
+# Unused client integration stubs (chakra, recharts, pdfjs, maps, markdown, lshay shadcn)
+# Product UI is custom + Tailwind; not imported by components/
+src/client-integrations/
+
+# Platform API routes (auth jwt helpers, sql/upload create utils) — SPA does not use them
+# Donations call Appwrite Functions from the browser (DonateModal), not these routes.
+src/app/api/
+
+# Unused platform hooks (only self-reference; not imported by product pages)
+src/utils/useAuth.js
+src/utils/useUser.js
+src/utils/useUpload.js
+src/utils/useHandleStreamResponse.js
+src/utils/create.js
+src/auth.js
+
+# ── Appwrite function packaging (keep SOURCE if you deploy donations) ─────────
+# Track appwrite-fn/create-checkout/source if needed; ignore deps & secrets:
+appwrite-fn/**/node_modules/
+appwrite-fn/**/dist/
+appwrite-fn/**/.env
+appwrite-fn/**/.env.*
+*.tar.gz
+create-checkout.tar.gz
+
+# ── Local / temp artifacts ────────────────────────────────────────────────────
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+.cache-loader/
+.eslintcache
+.stylelintcache
+.prettiercache
+.turbo
+.parcel-cache
+vite.config.local.*
+tailwind.config.local.*
+.env.local.*
+report.html
+bundle-stats.html
+stats.html
+.scannerwork/
+.sonar/
+*.pid
+*.seed
+*.pid.lock
+.npm
+.node_repl_history
+.yarn-integrity
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+.vscode-test
+)

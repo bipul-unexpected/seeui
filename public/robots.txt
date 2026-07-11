@@ -1,0 +1,26 @@
+# SeeUI — https://seeui.bipul.tech
+User-agent: *
+Allow: /
+Allow: /preview
+Allow: /extract
+Allow: /gradient
+
+# Disallow utility / internal paths if any
+Disallow: /api/
+Disallow: /donate/
+Disallow: /errors/
+
+# Popular crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+Sitemap: https://seeui.bipul.tech/sitemap.xml

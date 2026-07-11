@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  input, textarea, select, button {
+    @apply outline-none focus:outline-none;
+    font: inherit;
+  }
+
+  ::selection {
+    background: rgba(99, 102, 241, 0.3);
+    color: inherit;
+  }
+}
+
+/* ── Theme-reactive scrollbar (minimal professional gray · transparent track) ─ */
+:root {
+  /* Defaults — live workspace overwrites via JS on palette change */
+  --seeui-scroll-thumb: rgba(148, 163, 184, 0.38);
+  --seeui-scroll-thumb-hover: rgba(148, 163, 184, 0.58);
+  --seeui-scroll-track: transparent;
+  --seeui-scroll-size: 8px;
+  --seeui-accent: #6366f1;
+
+  /* shadcn semantic tokens (used by ui/* components e.g. limelight-nav) */
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 239 84% 67%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 239 84% 67%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 239 84% 67%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 239 84% 67%;
+}
+
+/* Hide scrollbars globally — keep scroll behavior, remove chrome */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* legacy Edge */
+}
+
+*::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+  background: transparent;
+}
+
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-corner {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Explicit utility for modal / nested scroll regions */
+.seeui-no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.seeui-no-scrollbar::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+/* Custom cursor — hide system pointer everywhere (custom layer is portaled above modals) */
+html.seeui-custom-cursor,
+html.seeui-custom-cursor * {
+  cursor: none !important;
+}
+
+/* Still hide default text caret chrome — our cursor shows an I-beam shape over fields */
+html.seeui-custom-cursor input,
+html.seeui-custom-cursor textarea,
+html.seeui-custom-cursor select,
+html.seeui-custom-cursor [contenteditable="true"] {
+  cursor: none !important;
+}
+
+/* Ensure cursor root is never clipped / never receives hits */
+.seeui-cursor-root,
+.seeui-cursor-ring,
+.seeui-cursor-dot,
+.seeui-cursor-glow {
+  pointer-events: none !important;
+}
+
+/* Utility kept for class compatibility — scrollbars remain hidden */
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+  }
+}
