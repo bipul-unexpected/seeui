@@ -5,7 +5,8 @@
 **SeeUI** is a free, browser-based **emotion color psychology generator** and live design workspace for developers and designers. Build accessible palettes, pair typography, export Tailwind design systems, generate multi-page brand books as PDF, extract emotions from images, and craft pro gradients — all in real time.
 
 🌐 **Live:** [https://seeui.bipul.tech](https://seeui.bipul.tech)  
-📦 **Repo:** [github.com/SomratChandraRoy/seeui](https://github.com/SomratChandraRoy/seeui)
+📦 **Repo:** [github.com/bipul-unexpected/seeui](https://github.com/bipul-unexpected/seeui)  
+👤 **Built by:** [₿ïþµŁ ℛøŸ](https://github.com/bipul-unexpected) · [X @BipulUnexpected](https://x.com/BipulUnexpected)
 
 ---
 
@@ -350,7 +351,7 @@ seeui/
 ### Install & run
 
 ```bash
-git clone https://github.com/SomratChandraRoy/seeui.git
+git clone https://github.com/bipul-unexpected/seeui.git
 cd seeui
 npm install
 npm run dev
@@ -480,4 +481,5 @@ See the [LICENSE](./LICENSE) file in this repository.
 
 Built for designers and developers who want **emotion-aware, accessible, export-ready** color systems without fighting CSS.
 
-**SeeUI** · [seeui.bipul.tech](https://seeui.bipul.tech)
+**Built by [₿ïþµŁ ℛøŸ](https://github.com/bipul-unexpected)**  
+**SeeUI** · [seeui.bipul.tech](https://seeui.bipul.tech) · [GitHub](https://github.com/bipul-unexpected/seeui) · [X @BipulUnexpected](https://x.com/BipulUnexpected)

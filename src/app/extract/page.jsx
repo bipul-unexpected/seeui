@@ -17,6 +17,7 @@ import {
 import ImageEmotionExtractor from "../../components/ImageEmotionExtractor";
 import PsychologyNav from "../../components/PsychologyNav";
 import CustomCursor from "../../components/CustomCursor";
+import { GITHUB_REPO_URL } from "../../data/branding";
 import {
   ACTIVE_PALETTE_KEY,
   paletteSignature,
@@ -258,7 +259,7 @@ export default function ExtractPage() {
                 activeId="extract"
               />
               <a
-                href="https://github.com/SomratChandraRoy/seeui"
+                href={GITHUB_REPO_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-8 w-8 items-center justify-center rounded-full"

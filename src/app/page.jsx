@@ -20,6 +20,12 @@ import SiteLoader from "../components/SiteLoader";
 import { Link } from "react-router";
 import StudioJourneyCards from "../components/StudioJourneyCards";
 import { buildJsonLdGraph } from "../data/seo";
+import {
+  CREATOR_NAME,
+  GITHUB_REPO_URL,
+  X_HANDLE,
+  X_PROFILE_URL,
+} from "../data/branding";
 import FONTS, {
   DEFAULT_FONT,
   RANDOM_DEFAULTS,
@@ -983,7 +989,7 @@ export default function HomePage() {
               </div>
 
               <a
-                href="https://github.com/SomratChandraRoy/seeui"
+                href={GITHUB_REPO_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 hover:scale-110 active:scale-95 ml-1"
@@ -1760,13 +1766,48 @@ export default function HomePage() {
                 >
                   Live UI Color Tester & Typography Playground. Free forever.
                 </p>
+                <p
+                  className="mt-2 text-xs transition-colors duration-500"
+                  style={{ color: mutedColor, fontFamily }}
+                >
+                  Built by{" "}
+                  <span style={{ color: textColor, fontWeight: 600 }}>
+                    {CREATOR_NAME}
+                  </span>
+                </p>
               </div>
-              <div className="flex items-center gap-4">
+              <div className="flex flex-col items-start sm:items-end gap-3">
+                <div className="flex items-center gap-3">
+                  <a
+                    href={GITHUB_REPO_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-[11px] font-medium transition-opacity hover:opacity-80"
+                    style={{ color: textColor, fontFamily }}
+                    title="GitHub repository"
+                  >
+                    <Github size={14} />
+                    GitHub
+                  </a>
+                  <a
+                    href={X_PROFILE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-[11px] font-medium transition-opacity hover:opacity-80"
+                    style={{ color: textColor, fontFamily }}
+                    title="X profile"
+                  >
+                    <span aria-hidden className="text-[12px] font-bold leading-none">
+                      𝕏
+                    </span>
+                    {X_HANDLE}
+                  </a>
+                </div>
                 <span
                   className="text-[10px] transition-colors duration-500"
                   style={{ color: mutedColor, fontFamily }}
                 >
-                  © {new Date().getFullYear()} SeeUI
+                  © {new Date().getFullYear()} SeeUI · {CREATOR_NAME}
                 </span>
               </div>
             </div>

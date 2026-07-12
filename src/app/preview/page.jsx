@@ -26,6 +26,7 @@ import {
 import { useDynamicFonts } from "../../utils/useDynamicFonts";
 import { getTypographyForEmotion } from "../../data/emotionTypography";
 import { buildPageMeta, buildPageLinks } from "../../data/seo";
+import { GITHUB_REPO_URL } from "../../data/branding";
 
 export const meta = () => buildPageMeta("preview");
 export const links = () => buildPageLinks("preview");
@@ -304,7 +305,7 @@ export default function PreviewPage() {
                 activeId="preview"
               />
               <a
-                href="https://github.com/SomratChandraRoy/seeui"
+                href={GITHUB_REPO_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-8 w-8 items-center justify-center rounded-full transition-transform hover:scale-105"

@@ -21,6 +21,7 @@ import {
   getMutedContrastColor,
 } from "../../utils/getContrastColor";
 import { buildPageMeta, buildPageLinks } from "../../data/seo";
+import { GITHUB_REPO_URL } from "../../data/branding";
 
 export const meta = () => buildPageMeta("gradient");
 export const links = () => buildPageLinks("gradient");
@@ -137,7 +138,7 @@ export default function GradientPage() {
                 activeId="gradient"
               />
               <a
-                href="https://github.com/SomratChandraRoy/seeui"
+                href={GITHUB_REPO_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-8 w-8 items-center justify-center rounded-full"

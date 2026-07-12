@@ -3,7 +3,16 @@
  * Used by root meta, page-level meta, JSON-LD, sitemap, and robots.
  */
 
-export const SITE_URL = "https://seeui.bipul.tech";
+import {
+  CREATOR_NAME,
+  CREATOR_SITE_URL,
+  GITHUB_REPO_URL,
+  SITE_LIVE_URL,
+  X_HANDLE,
+  X_PROFILE_URL,
+} from "./branding";
+
+export const SITE_URL = SITE_LIVE_URL;
 export const SITE_NAME = "SeeUI";
 export const SITE_TAGLINE = "Emotion-Based Color Psychology Generator";
 export const SITE_DEFAULT_TITLE =
@@ -205,8 +214,8 @@ export function buildPageMeta(pageKey = "home", opts = {}) {
     { title },
     { name: "description", content: description },
     { name: "keywords", content: keywords },
-    { name: "author", content: `${SITE_NAME} · bipul.tech` },
-    { name: "creator", content: SITE_NAME },
+    { name: "author", content: `${CREATOR_NAME} · ${SITE_NAME}` },
+    { name: "creator", content: CREATOR_NAME },
     { name: "publisher", content: SITE_NAME },
     {
       name: "robots",
@@ -274,9 +283,8 @@ export function buildPageMeta(pageKey = "home", opts = {}) {
     { name: "twitter:description", content: description },
     { name: "twitter:image", content: OG_IMAGE },
     { name: "twitter:image:alt", content: OG_IMAGE_ALT },
-    // Optional brand handle placeholders (safe if unused)
-    { name: "twitter:site", content: "@seeui" },
-    { name: "twitter:creator", content: "@seeui" },
+    { name: "twitter:site", content: X_HANDLE },
+    { name: "twitter:creator", content: X_HANDLE },
   ];
 }
 
@@ -345,9 +353,16 @@ export function buildJsonLdGraph() {
       },
     },
     creator: {
-      "@type": "Organization",
-      name: "bipul.tech",
-      url: "https://bipul.tech",
+      "@type": "Person",
+      name: CREATOR_NAME,
+      url: CREATOR_SITE_URL,
+      sameAs: [GITHUB_REPO_URL, X_PROFILE_URL],
+    },
+    author: {
+      "@type": "Person",
+      name: CREATOR_NAME,
+      url: CREATOR_SITE_URL,
+      sameAs: [GITHUB_REPO_URL, X_PROFILE_URL],
     },
   };
 
@@ -375,8 +390,14 @@ export function buildJsonLdGraph() {
     name: SITE_NAME,
     url: SITE_URL,
     logo: `${SITE_URL}/favicon.png`,
-    sameAs: ["https://github.com/SomratChandraRoy/seeui"],
+    sameAs: [GITHUB_REPO_URL, X_PROFILE_URL, CREATOR_SITE_URL],
     description: SITE_TAGLINE,
+    founder: {
+      "@type": "Person",
+      name: CREATOR_NAME,
+      url: CREATOR_SITE_URL,
+      sameAs: [GITHUB_REPO_URL, X_PROFILE_URL],
+    },
   };
 
   const software = {
